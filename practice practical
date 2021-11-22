@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+class club
+{
+        private:
+                
+            char president[50];
+            char secratry[50];
+            char club[50];
+        public:
+                void input();
+                void display();
+                        
+                
+};
+void club::input()
+{
+        cout<<"Enter the name of president:";
+        cin>>president;
+        cout<<"Enter the name of secratry:";
+        cin>>secratry;
+        cout<<"Enter the name of club:";
+        cin>>club;
+}
+void club::display()
+{
+        cout<<"\nPresident:"<<president;
+        cout<<"\nsecratry:"<<secratry;
+        cout<<"\nclub:"<<club;
+}
+int main()
+{
+        club a;
+        a.input();
+        a.display();
+};
