@@ -2,4 +2,72 @@
 
 using namespace std;
 
-class Node
+class node
+{
+    public:
+    string Name;
+    string Div;
+    string rollNo;
+    string PRN;
+    node * next;
+    node()
+    {
+        next = nullptr;
+    }
+};
+
+class LinkedList
+{
+    node * head;
+    public:
+    LinkedList()
+    {
+        head = nullptr;
+    }
+    void insert_at_beginning(string name,string div,string rNo,string prn)
+    {
+        node*temp = new node();
+        temp->Name = name;
+        temp->Div = div;
+        temp->rollNo = rNo;
+        temp->PRN = prn;
+        temp->next = head;
+        head = temp;
+    }
+    void print()
+    {
+        if (head == NULL)
+        {
+            cout<<"List is empty"<<endl;
+        }
+        else
+        {
+            node * temp = head;
+            cout<<"Linked List: "<<endl;
+            cout<<"Name\t\tDivision\tRollNo\t\tPRN"<<endl;
+            while (temp != NULL)
+            {
+                cout<<temp->Name<<"\t\t"<<temp->Div<<"\t\t"<<temp->rollNo<<"\t\t"<<temp->PRN<<endl;
+                temp = temp->next;
+            }
+        }
+    }
+};
+int main()
+{
+    int choice,v,p;
+    string n,d,r,q;
+    LinkedList ll;
+    cout<<"Enter Name: ";
+    cin>>n;
+    cout<<"Enter Division: ";
+    cin>>d;
+    cout<<"Enter RollNO: ";
+    cin>>r;
+    cout<<"Enter PRN: ";
+    cin>>q;
+    ll.insert_at_beginning(n,d,r,q);
+    ll.print();
+    
+    return 0;
+}
